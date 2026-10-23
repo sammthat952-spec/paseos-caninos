@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paseos Caninos - Sophi, Mafer & Sam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink-main: #ff80bf;
+            --pink-soft: #ffb3d9;
+            --pink-light: #fff0f6;
+            --teal-main: #4cd3c8;
+            --teal-dark: #2ba89e;
+            --teal-light: #e6f9f8;
+            --text-color: #4a4a4a;
+            --bg-color: #faf9f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 30px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--pink-soft) 0%, var(--teal-light) 100%);
+            padding: 2.5rem 1rem 3.5rem 1rem;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .logo-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.3rem;
+            color: #d63384;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 0px white;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #333;
+            background: white;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 20px;
+            margin-top: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 22px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.03);
+            border: 2px solid #f0f0f0;
+        }
+
+        .card-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.3rem;
+            color: var(--teal-dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            font-size: 1.3rem;
+            background: var(--teal-light);
+            padding: 8px;
+            border-radius: 12px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .price-box {
+            background: var(--teal-light);
+            border: 2px solid var(--teal-main);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .price-box.full-width {
+            grid-column: span 2;
+            background: var(--pink-light);
+            border-color: var(--pink-main);
+        }
+
+        .price-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .price-amount {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.6rem;
+            color: #d63384;
+            margin: 4px 0;
+        }
+
+        .price-desc {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            outline: none;
+            background: #fcfcfc;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--pink-main);
+            background: white;
+        }
+
+        .total-display {
+            background: var(--pink-light);
+            border: 2px dashed var(--pink-main);
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 15px 0;
+            font-weight: 700;
+        }
+
+        .total-price {
+            font-family: 'Fredoka One', cursive;
+            color: #d63384;
+            font-size: 1.4rem;
+        }
+
+        .btn-whatsapp {
+            display: block;
+            width: 100%;
+            background: #25D366;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            border: none;
+            cursor: pointer;
+            margin-bottom: 12px;
+        }
+
+        .btn-instagram {
+            display: block;
+            width: 100%;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+            text-align: center;
+            padding: 16px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(220, 39, 67, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-title">🐾 Paseos Caninos</div>
+        <div class="subtitle">Sophi, Mafer & Sam</div>
+    </header>
+
+    <div class="container">
+
+        <!-- QUÉ INCLUYEN NUESTROS PASEOS -->
+        <div class="card">
+            <div class="card-title">✨ ¿Qué incluyen nuestros paseos?</div>
+            <ul class="features-list">
+                <li><span class="feature-icon">💧</span> Agua fresca e hidratación constante</li>
+                <li><span class="feature-icon">💩</span> Bolsitas biodegradables para desecho</li>
+                <li><span class="feature-icon">📸</span> Reporte con fotos/videos por WhatsApp</li>
+                <li><span class="feature-icon">🎾</span> Juegos y ejercicios personalizados</li>
+                <li><span class="feature-icon">🥇</span> Cuidado 100% dedicado</li>
+            </ul>
+        </div>
+        
+        <!-- TARIFAS -->
+        <div class="card">
+            <div class="card-title">🏷️ Nuestras Tarifas</div>
+            <div class="pricing-grid">
+                <div class="price-box">
+                    <div class="price-title">Media Hora</div>
+                    <div class="price-amount">$50</div>
+                    <div class="price-desc">Paseo express</div>
+                </div>
+                <div class="price-box">
+                    <div class="price-title">1 Hora</div>
+                    <div class="price-amount">$80</div>
+                    <div class="price-desc">Paseo completo</div>
+                </div>
+                <div class="price-box full-width">
+                    <div class="price-title">Paquete Semanal (5 Paseos)</div>
+                    <div class="price-amount">$350</div>
+                    <div class="price-desc">¡Ahorras en tus paseos de la semana!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORMULARIO DE RESERVA -->
+        <div class="card">
+            <div class="card-title">📅 Agenda tu Paseo</div>
+            <form id="bookingForm" onsubmit="sendWhatsApp(event)">
+                
+                <div class="form-group">
+                    <label for="ownerName">Tu Nombre:</label>
+                    <input type="text" id="ownerName" placeholder="Ej. Ana García" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dogName">Nombre de tu Perrito:</label>
+                    <input type="text" id="dogName" placeholder="Ej. Firulais" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="planSelect">Opción de Paseo:</label>
+                    <select id="planSelect" onchange="calculateTotal()" required>
+                        <option value="50">Media Hora ($50 MXN)</option>
+                        <option value="80" selected>1 Hora ($80 MXN)</option>
+                        <option value="350">Paquete 5 Paseos ($350 MXN)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="daySelect">Día deseado:</label>
+                    <select id="daySelect" onchange="updateTimes()" required>
+                        <option value="" disabled selected>Selecciona un día</option>
+                        <option value="Lunes">Lunes</option>
+                        <option value="Martes">Martes</option>
+                        <option value="Miércoles">Miércoles</option>
+                        <option value="Jueves">Jueves</option>
+                        <option value="Viernes">Viernes</option>
+                        <option value="Sábado">Sábado</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeSelect">Horario:</label>
+                    <select id="timeSelect" required>
+                        <option value="" disabled selected>Primero selecciona un día</option>
+                    </select>
+                </div>
+
+                <div class="total-display">
+                    Total estimado: <span class="total-price" id="totalPrice">$80 MXN</span>
+                </div>
+
+                <button type="submit" class="btn-whatsapp">
+                    📱 Agendar por WhatsApp
+                </button>
+
+                <a href="https://instagram.com/paseos_patitasfelices" target="_blank" class="btn-instagram">
+                    📸 Síguenos en Instagram
+                </a>
+
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function updateTimes() {
+            const day = document.getElementById('daySelect').value;
+            const timeSelect = document.getElementById('timeSelect');
+            timeSelect.innerHTML = '';
+
+            let times = [];
+            
+            // Lunes, Miércoles y Jueves
+            if (day === 'Lunes' || day === 'Miércoles' || day === 'Jueves') {
+                times = ['3:00 PM - 4:00 PM'];
+            } 
+            // Martes y Viernes
+            else if (day === 'Martes' || day === 'Viernes') {
+                times = ['2:00 PM - 3:00 PM', '3:00 PM - 4:00 PM'];
+            }
+            // Sábado
+            else if (day === 'Sábado') {
+                times = ['12:00 PM - 1:00 PM', '1:00 PM - 2:00 PM', '2:00 PM - 3:00 PM'];
+            }
+
+            times.forEach(time => {
+                const opt = document.createElement('option');
+                opt.value = time;
+                opt.textContent = time;
+                timeSelect.appendChild(opt);
+            });
+        }
+
+        function calculateTotal() {
+            const price = document.getElementById('planSelect').value;
+            document.getElementById('totalPrice').textContent = '$' + price + ' MXN';
+        }
+
+        function sendWhatsApp(e) {
+            e.preventDefault();
+            
+            const phoneNumber = "525657796572";
+
+            const dog = document.getElementById('dogName').value;
+            const owner = document.getElementById('ownerName').value;
+            const day = document.getElementById('daySelect').value;
+            const time = document.getElementById('timeSelect').value;
+            const planText = document.getElementById('planSelect').options[document.getElementById('planSelect').selectedIndex].text;
+
+            const text = `¡Hola Sophi, Mafer y Sam! 🐾 Quisiera agendar un paseo:%0A%0A` +
+                         `• *Mi Nombre:* ${encodeURIComponent(owner)}%0A` +
+                         `• *Perrito:* ${encodeURIComponent(dog)}%0A` +
+                         `• *Día:* ${encodeURIComponent(day)}%0A` +
+                         `• *Horario:* ${encodeURIComponent(time)}%0A` +
+                         `• *Opción:* ${encodeURIComponent(planText)}%0A%0A` +
+                         `¿Tienen disponibilidad? ¡Muchas gracias!`;
+
+            window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
+        }
+    </script>
+</body>
+</html>
